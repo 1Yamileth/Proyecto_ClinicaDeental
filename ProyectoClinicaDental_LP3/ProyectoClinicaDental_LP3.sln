@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.csproj", "{6415F7AD-5ECE-46FF-93CB-CE12539C8151}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelos", "Modelos\Modelos.csproj", "{6415F7AD-5ECE-46FF-93CB-CE12539C8151}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseDeDatos", "BaseDeDatos\BaseDeDatos.csproj", "{D19AA47B-CE54-4683-B224-910118463A92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datos", "BaseDeDatos\Datos.csproj", "{D19AA47B-CE54-4683-B224-910118463A92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VistaBlazor", "VistaBlazor\VistaBlazor.csproj", "{EA612F53-19D5-41F0-9E82-4B2F70165DF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VistaBlazor", "VistaBlazor\VistaBlazor.csproj", "{EA612F53-19D5-41F0-9E82-4B2F70165DF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

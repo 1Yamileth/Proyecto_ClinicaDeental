@@ -1,11 +1,14 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
+using VistaBlazor;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+
+// Cadena de conexión
+Config cadena = new Config(builder.Configuration.GetConnectionString("MySQL"));
+builder.Services.AddSingleton(cadena);
 
 var app = builder.Build();
 
