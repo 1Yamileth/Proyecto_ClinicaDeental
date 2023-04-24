@@ -1,8 +1,8 @@
 ﻿using Modelos;
 
-namespace Datos.Interfaces
+namespace VistaBlazor.Interfaces
 {
-    public interface IUsuarioRepositorio
+    public interface IUsuarioServicio
     {
         Task<Usuario> GetPorCodigoAsync(string codigoUsuario);
         Task<bool> NuevoAsync(Usuario usuario);

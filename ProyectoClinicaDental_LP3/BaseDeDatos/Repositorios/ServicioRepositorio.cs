@@ -5,11 +5,11 @@ using MySql.Data.MySqlClient;
 
 namespace Datos.Repositorios
 {
-    public class ProductoRepositorio : IProductoRepositorio
+    public class ServicioRepositorio : IServicioRepositorio
     {
         private string CadenaConexion;
 
-        public ProductoRepositorio(string _cadenaConexion)
+        public ServicioRepositorio(string _cadenaConexion)
         {
             CadenaConexion = _cadenaConexion;
         }
@@ -20,7 +20,7 @@ namespace Datos.Repositorios
         }
 
 
-        public async Task<bool> Actualizar(Producto producto)
+        public async Task<bool> Actualizar(Servicio servicio)
         {
             bool resultado = false;
             try
@@ -37,7 +37,7 @@ namespace Datos.Repositorios
             return resultado;
         }
 
-        public async Task<bool> Eliminar(string codigo)
+        public async Task<bool> Eliminar(string codigoServicio)
         {
             bool resultado = false;
             try
@@ -54,15 +54,15 @@ namespace Datos.Repositorios
 
         }
 
-        public async Task<IEnumerable<Producto>> GetLista()
+        public async Task<IEnumerable<Servicio>> GetLista()
         {
-            IEnumerable<Producto> lista = new List<Producto>();
+            IEnumerable<Servicio> lista = new List<Servicio>();
             try
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
                 string sql = "SELECT * FROM producto;";
-                lista = await _conexion.QueryAsync<Producto>(sql);
+                lista = await _conexion.QueryAsync<Servicio>(sql);
             }
             catch (Exception)
             {
@@ -71,15 +71,15 @@ namespace Datos.Repositorios
 
         }
 
-        public async Task<Producto> GetPorCodigo(string codigo)
+        public async Task<Servicio> GetPorCodigo(string codigoServicio)
         {
-            Producto prod = new Producto();
+            Servicio prod = new Servicio();
             try
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
                 string sql = "SELECT * FROM producto WHERE Codigo = @Codigo;";
-                prod = await _conexion.QueryFirstAsync<Producto>(sql, new { codigo });
+                prod = await _conexion.QueryFirstAsync<Servicio>(sql, new { codigo });
             }
             catch (Exception)
             {
@@ -87,7 +87,7 @@ namespace Datos.Repositorios
             return prod;
         }
 
-        public async Task<bool> Nuevo(Producto producto)
+        public async Task<bool> Nuevo(Servicio servicio)
         {
             bool resultado = false;
             try

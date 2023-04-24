@@ -1,4 +1,8 @@
+using CurrieTechnologies.Razor.SweetAlert2;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using VistaBlazor;
+using VistaBlazor.Interfaces;
+using VistaBlazor.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,15 @@ builder.Services.AddServerSideBlazor();
 // Cadena de conexión
 Config cadena = new Config(builder.Configuration.GetConnectionString("MySQL"));
 builder.Services.AddSingleton(cadena);
+
+builder.Services.AddScoped<ILoginServicio, LoginServicio>();
+builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>();
+builder.Services.AddScoped<IServicioServicio, ServicioServicio>();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddResponseCompression();
+builder.Services.AddControllers();
+builder.Services.AddSweetAlert2();
 
 var app = builder.Build();
 
@@ -25,6 +38,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseResponseCompression();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");

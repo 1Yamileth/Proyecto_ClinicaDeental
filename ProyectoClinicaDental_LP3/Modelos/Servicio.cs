@@ -2,17 +2,20 @@
 
 namespace Modelos
 {
-    public class Producto
+    public class Servicio
     {
         //PROPIEDADES
 
         [Required(ErrorMessage = "El código es obligatorio")]
-        public string Codigo { get; set; }
+        public string CodigoServicio { get; set; }
         [Required(ErrorMessage = "La descripción es obligatoria")]
         public string Descripcion { get; set; }
-        public int Existencia { get; set; }
+
+        public DateTime Duracion { get; set; }
+        public string CodigoUsuario { get; set; }
         public decimal Precio { get; set; }
-        public byte[] Foto { get; set; }
         public bool EstaActivo { get; set; }
+        public DateTime Disponibilidad { get; set; }
+
     }
 }
