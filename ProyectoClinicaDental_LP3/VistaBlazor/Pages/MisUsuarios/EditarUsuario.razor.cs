@@ -1,4 +1,4 @@
-﻿using Blazor.Interfaces;
+﻿using VistaBlazor.Interfaces;
 using CurrieTechnologies.Razor.SweetAlert2;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;

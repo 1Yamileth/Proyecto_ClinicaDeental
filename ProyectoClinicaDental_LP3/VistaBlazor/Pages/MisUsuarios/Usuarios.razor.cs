@@ -1,8 +1,8 @@
-﻿using Blazor.Interfaces;
+﻿using VistaBlazor.Interfaces;
 using Microsoft.AspNetCore.Components;
 using Modelos;
 
-namespace Blazor.Pages.MisUsuarios
+namespace VistaBlazor.MisUsuarios
 {
     public partial class Usuarios
     {

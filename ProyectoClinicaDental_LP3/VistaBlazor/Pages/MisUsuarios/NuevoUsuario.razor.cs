@@ -1,10 +1,10 @@
-﻿using Blazor.Interfaces;
+﻿using VistaBlazor.Interfaces;
 using CurrieTechnologies.Razor.SweetAlert2;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Modelos;
 
-namespace Blazor.Pages.MisUsuarios
+namespace VistaBlazor.Pages.MisUsuarios
 {
     public partial class NuevoUsuario
     {

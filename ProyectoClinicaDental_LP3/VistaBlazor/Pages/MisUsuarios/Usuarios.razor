@@ -1,8 +1,6 @@
 ﻿@page "/Usuarios"
 @using Modelos;
 
-<AuthorizeView Roles="Administrador">
-    <Authorized Context="AuthenticationState">
         <h3>Lista de Usuarios</h3>
 
         <div class="form-group row">
@@ -68,9 +66,4 @@
                 </tbody>
             </table>
         }
-    </Authorized>
-    <NotAuthorized>
-        <h3>No tiene permisos para esta ruta</h3>
-    </NotAuthorized>
-</AuthorizeView>
 
