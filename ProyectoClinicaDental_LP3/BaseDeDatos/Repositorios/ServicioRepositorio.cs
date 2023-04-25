@@ -29,7 +29,7 @@ namespace Datos.Repositorios
                 await _conexion.OpenAsync();
                 string sql = @"UPDATE producto SET Descripcion = @Descripcion, Existencia = @Existencia, Precio = @Precio, 
                                 Foto = @Foto, EstaActivo = @EstaActivo WHERE Codigo = @Codigo;";
-                resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, producto));
+                resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, servicio));
             }
             catch (Exception)
             {
@@ -45,7 +45,7 @@ namespace Datos.Repositorios
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
                 string sql = "DELETE FROM producto WHERE Codigo = @Codigo;";
-                resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, new { codigo }));
+                resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, new { codigoServicio }));
             }
             catch (Exception)
             {
@@ -79,7 +79,7 @@ namespace Datos.Repositorios
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
                 string sql = "SELECT * FROM producto WHERE Codigo = @Codigo;";
-                prod = await _conexion.QueryFirstAsync<Servicio>(sql, new { codigo });
+                prod = await _conexion.QueryFirstAsync<Servicio>(sql, new { codigoServicio });
             }
             catch (Exception)
             {
@@ -96,7 +96,7 @@ namespace Datos.Repositorios
                 await _conexion.OpenAsync();
                 string sql = @"INSERT INTO producto (Codigo,Descripcion,Existencia,Precio,Foto,EstaActivo)
                                  VALUES (@Codigo,@Descripcion,@Existencia,@Precio,@Foto,@EstaActivo);";
-                resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, producto));
+                resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, servicio));
             }
             catch (Exception)
             {
