@@ -16,7 +16,7 @@ namespace Modelos
         public string Rol { get; set; }
         public byte[] Foto { get; set; }
         public DateTime FechaCreacion { get; set; }
-        public bool EstaActivo { get; set; }
+        public bool EstadoActivo { get; set; }
 
 
         //CONSTRUCTORES
@@ -24,7 +24,7 @@ namespace Modelos
         {
         }
 
-        public Usuario(string codigoUsuario, string nombre, string contrasena, string correo, string rol, byte[] foto, DateTime fechaCreacion, bool estaActivo)
+        public Usuario(string codigoUsuario, string nombre, string contrasena, string correo, string rol, byte[] foto, DateTime fechaCreacion, bool estadoActivo)
         {
             CodigoUsuario = codigoUsuario;
             Nombre = nombre;
@@ -33,7 +33,7 @@ namespace Modelos
             Rol = rol;
             Foto = foto;
             FechaCreacion = fechaCreacion;
-            EstaActivo = estaActivo;
+            EstadoActivo = estadoActivo;
         }
     }
 }

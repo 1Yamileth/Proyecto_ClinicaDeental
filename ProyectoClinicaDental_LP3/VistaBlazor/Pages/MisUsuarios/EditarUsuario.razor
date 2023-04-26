@@ -1,6 +1,8 @@
 ﻿@page "/Usuarios/Editar/{CodigoUsuario}"
 
 
+<AuthorizeView Roles="Administrador">
+    <Authorized Context="AuthenticationState">
       <h3>Editar Usuario</h3>
 
       <EditForm Model="@user">
@@ -109,3 +111,8 @@
 
       </EditForm>
 
+    </Authorized>
+    <NotAuthorized>
+        <h3>NO TIENE PERMITIDO EL ACCESO</h3>
+    </NotAuthorized>
+</AuthorizeView>

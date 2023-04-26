@@ -28,7 +28,7 @@ namespace Datos.Repositorios
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
-                string sql = @"UPDATE usuario SET Nombre = @Nombre, Contrasena = @Contrasena, Correo = @Correo, Rol = @Rol, Foto = @Foto, EstaActivo = @EstaActivo
+                string sql = @"UPDATE usuario SET Nombre = @Nombre, Contrasena = @Contrasena, Correo = @Correo, Rol = @Rol, Foto = @Foto, EstadoActivo = @EstadoActivo
                                 WHERE CodigoUsuario = @CodigoUsuario;";
                 resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, usuario));
             }
@@ -93,8 +93,8 @@ namespace Datos.Repositorios
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
-                string sql = @"INSERT INTO usuario (CodigoUsuario,Nombre,Contrasena,Correo,Rol,Foto,FechaCreacion,EstaActivo)
-                                 VALUES (@CodigoUsuario,@Nombre,@Contrasena,@Correo,@Rol,@Foto,@FechaCreacion,@EstaActivo);";
+                string sql = @"INSERT INTO usuario (CodigoUsuario,Nombre,Contrasena,Correo,Rol,Foto,FechaCreacion,EstadoActivo)
+                                 VALUES (@CodigoUsuario,@Nombre,@Contrasena,@Correo,@Rol,@Foto,@FechaCreacion,@EstadoActivo);";
                 resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, usuario));
             }
             catch (Exception)

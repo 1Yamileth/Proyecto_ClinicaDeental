@@ -1,8 +1,10 @@
 ﻿@page "/Usuarios"
 @using Modelos;
 
-        <h3>Lista de Usuarios</h3>
+<AuthorizeView Roles="Administrador">
+    <Authorized Context="AuthenticationState">
 
+        <h3>Lista de Usuarios</h3>
         <div class="form-group row">
             <div class="col-sm-2">
                 <a href="/Usuarios/Nuevo" class="btn btn-primary m-2">Nuevo</a>
@@ -46,7 +48,7 @@
                                 <th></th>
                             }
                             <th>@user.FechaCreacion</th>
-                            @if (user.EstaActivo)
+                            @if (user.EstadoActivo)
                             {
                                 <th>
                                     <span class="oi oi-circle-check" style="color:green;"></span>
@@ -66,4 +68,9 @@
                 </tbody>
             </table>
         }
+    </Authorized>
+    <NotAuthorized>
+        <h3>NO TIENE PERMISO PARA LLEVAR ACABO ESTA ACCION</h3>
+    </NotAuthorized>
+</AuthorizeView>
 

@@ -1,6 +1,6 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">VistaBlazor</a>
+        <a class="navbar-brand" href="">Blazor-Vista</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -9,17 +9,36 @@
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Inicio
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Usuario">
-                <span class="oi oi-plus" aria-hidden="true"></span> Usuario
-            </NavLink>
-        </div>
-        
+        <AuthorizeView Roles="Administrador, Usuario">
+            <Authorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                        <span class="oi oi-home" aria-hidden="true"></span> Inicio
+                    </NavLink>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+
+        <AuthorizeView Roles="Administrador">
+            <Authorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="Usuarios">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Usuarios
+                    </NavLink>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+
+        <AuthorizeView Roles="Administrador">
+            <Authorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="Productos">
+                        <span class="oi oi-compass" aria-hidden="true"></span> Productos
+                    </NavLink>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+
     </nav>
 </div>
 
@@ -33,3 +52,4 @@
         collapseNavMenu = !collapseNavMenu;
     }
 }
+

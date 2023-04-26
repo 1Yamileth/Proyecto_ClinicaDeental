@@ -1,0 +1,30 @@
+﻿@page "/login"
+@page "/login{MensajeError}"
+
+
+
+<h3>Login</h3>
+@if (MensajeError != null)
+{// si el usuario no esta activo muestra este error
+    <div class= "text-danger">@MensajeError</div>
+    
+}
+
+<form method="post" action="/autenticar/validar">
+    <div class="form-group">
+        <label>Usuario: </label>
+        <input type="text" name=" CodigoUsuario" class="form-control col-sm-6 col-md-4" />
+    </div>
+
+    <div class="form-group">
+        <label>Contraseña: </label>
+        <input type="password" name=" Contrasena" class="form-control col-sm-6 col-md-4" />
+    </div>
+    <button class="btn btn-primary">Entrar</button>
+</form>
+
+@code {
+    [Parameter] public string MensajeError { get; set; }//parametro
+
+
+}

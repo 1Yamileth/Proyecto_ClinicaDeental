@@ -33,7 +33,7 @@ namespace VistaBlazor.Controllers
                 {
                     Usuario user = await _usuarioRepositorio.GetPorCodigoAsync(login.CodigoUsuario);
 
-                    if (user.EstaActivo)
+                    if (user.EstadoActivo)
                     {
                         rol = user.Rol;
 
@@ -50,12 +50,12 @@ namespace VistaBlazor.Controllers
                     }
                     else
                     {
-                        return LocalRedirect("/Login/El usuario no se encuentra activo");
+                        return LocalRedirect("/login/El usuario no se encuentra activo");
                     }
                 }
                 else
                 {
-                    return LocalRedirect("/Login/Datos de usuario invalidos");
+                    return LocalRedirect("/login/Datos de usuario invalidos");
                 }
             }
             catch (Exception)
@@ -64,11 +64,11 @@ namespace VistaBlazor.Controllers
             return LocalRedirect("/");
         }
 
-        [HttpGet("/Salir")]
+        [HttpGet("/salir")]
         public async Task<IActionResult> Cerrar()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return LocalRedirect("/Login");
+            return LocalRedirect("/login");
         }
     }
 }

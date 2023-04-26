@@ -21,9 +21,9 @@ namespace VistaBlazor.Servicios
             return await usuarioRepositorio.ActualizarAsync(usuario);
         }
 
-        public async Task<bool> EliminarAsync(string codigo)
+        public async Task<bool> EliminarAsync(string codigoUsuario)
         {
-            return await usuarioRepositorio.EliminarAsync(codigo);
+            return await usuarioRepositorio.EliminarAsync(codigoUsuario);
         }
 
         public async Task<IEnumerable<Usuario>> GetListaAsync()
