@@ -1,8 +1,8 @@
 ﻿@page "/Usuarios"
 @using Modelos;
 
-<AuthorizeView Roles="Administrador">
-    <Authorized Context="AuthenticationState">
+ <AuthorizeView Roles="Administrador">
+   <Authorized Context="AuthenticationState">
 
         <h3>Lista de Usuarios</h3>
         <div class="form-group row">
@@ -37,10 +37,10 @@
                             <th>@user.Nombre</th>
                             <th>@user.Correo</th>
                             <th>@user.Rol</th>
-                            @if(user.Foto != null)
+                            @if (user.Foto != null)
                             {
                                 <th>
-                                    <img width="40" height="40" src="data:image;base64,@System.Convert.ToBase64String(user.Foto)"/>
+                                    <img width="40" height="40" src="data:image;base64,@System.Convert.ToBase64String(user.Foto)" />
                                 </th>
                             }
                             else
@@ -68,9 +68,12 @@
                 </tbody>
             </table>
         }
+
     </Authorized>
     <NotAuthorized>
-        <h3>NO TIENE PERMISO PARA LLEVAR ACABO ESTA ACCION</h3>
+        <h3>NO TIENE PERMISO PARA ESTA RUTA</h3>
     </NotAuthorized>
 </AuthorizeView>
+
+      
 
