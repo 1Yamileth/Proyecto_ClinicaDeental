@@ -1,1 +1,73 @@
 ﻿@page "/Servicio"
+@using Modelos;
+
+<AuthorizeView Roles="Administrador">
+    <Authorized Context="AuthenticationState">
+
+        <h3>Lista de Servicios</h3>
+        <div class="form-group row">
+            <div class="col-sm-2">
+                <a href="/Servicio" class="btn btn-primary m-2">Nuevo</a>
+            </div>
+        </div>
+
+        @if (listaServicios == null)
+        {
+            <p>No existen servicios en el sistema</p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripcion</th>
+                        <th>Duración</th>
+                        <th>Codigo Usuario</th>
+                        <th>Precio</th>
+                        <th>Esta Activo</th>
+                        <th>Disponibilidad</th>  
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Servicio servi in listaServicios)
+                    {
+                        <tr>
+                            <th>@servi.Codigo</th>
+                            <th>@servi.Descripcion</th>
+                            <th>@servi.Duracion</th>
+                            <th>@servi.CodigoUsuario</th>
+                            <th>@servi.Precio</th>
+                            <th>@servi.EstaActivo</th>
+                            <th>@servi.Disponibilidad</th>
+                    
+                            @if (servi.EstadoActivo)
+                            {
+                                <th>
+                                    <span class="oi oi-circle-check" style="color:green;"></span>
+                                </th>
+                            }
+                            else
+                            {
+                                <th>
+                                    <span class="oi oi-circle-x" style="color:red;"></span>
+                                </th>
+                            }
+                            <th>
+                                <a class="btn btn-success" href="@($"/Servicio/Editar/{servi.CodigoUsuario}")">Editar</a>
+                            </th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+    </Authorized>
+    <NotAuthorized>
+        <h3>NO TIENE PERMISO PARA ESTA RUTA</h3>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+
+
