@@ -1,9 +1,11 @@
 ﻿using Datos.Interfaces;
 using Datos.Repositorios;
+using Modelos;
+using VistaBlazor.Interfaces;
 
 namespace VistaBlazor.Servicios
 {
-    public class DetalleFacturaServicio : IDetalleFacturaRepositorio
+    public class DetalleFacturaServicio : IDetalleFacturaServicio
     {
         private readonly Config _configuracion;
         private IDetalleFacturaRepositorio detalleFacturaRepositorio;
