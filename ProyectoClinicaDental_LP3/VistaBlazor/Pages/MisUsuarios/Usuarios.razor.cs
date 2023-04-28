@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Modelos;
 
-namespace VistaBlazor.MisUsuarios
+namespace VistaBlazor.Pages.MisUsuarios
 {
     public partial class Usuarios
     {

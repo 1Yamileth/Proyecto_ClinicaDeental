@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Modelos;
 
-namespace Blazor.Pages.MisUsuarios
+namespace VistaBlazor.Pages.MisUsuarios
 {
     public partial class EditarUsuario
     {
