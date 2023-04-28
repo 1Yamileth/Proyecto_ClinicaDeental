@@ -17,6 +17,8 @@ builder.Services.AddSingleton(cadena);
 builder.Services.AddScoped<ILoginServicio, LoginServicio>();
 builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>();
 builder.Services.AddScoped<IServicioServicio, ServicioServicio>();
+builder.Services.AddScoped<IFacturaServicio, FacturaServicio>();
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddResponseCompression();
