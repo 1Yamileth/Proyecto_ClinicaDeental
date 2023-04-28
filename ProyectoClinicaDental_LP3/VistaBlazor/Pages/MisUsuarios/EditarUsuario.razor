@@ -1,6 +1,5 @@
 ﻿@page "/Usuarios/Editar/{CodigoUsuario}"
 
-
 <AuthorizeView Roles="Administrador">
     <Authorized Context="AuthenticationState">
       <h3>Editar Usuario</h3>
@@ -107,8 +106,6 @@
                     <input type="submit" class="btn btn-warning" value="Eliminar" @onclick="Eliminar" />
                 </p>
             </div>
-
-
       </EditForm>
 
     </Authorized>
