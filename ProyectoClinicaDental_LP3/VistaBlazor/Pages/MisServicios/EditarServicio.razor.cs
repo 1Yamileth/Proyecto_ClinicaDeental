@@ -1,5 +1,6 @@
 ﻿using CurrieTechnologies.Razor.SweetAlert2;
 using Microsoft.AspNetCore.Components;
+using Modelos;
 using VistaBlazor.Interfaces;
 
 
@@ -11,7 +12,7 @@ namespace VistaBlazor.Pages.MisServicios
         [Inject] private NavigationManager navigationManager { get; set; }
         [Inject] private SweetAlertService Swal { get; set; }
 
-        Servicio prod = new Servicio();
+        ServicioM prod = new ServicioM();
 
         [Parameter] public string Codigo { get; set; }
 
@@ -27,7 +28,7 @@ namespace VistaBlazor.Pages.MisServicios
 
         protected async Task Guardar()
         {
-            if (string.IsNullOrWhiteSpace(prod.CodigoServicio) || string.IsNullOrWhiteSpace(prod.descripcion))
+            if (string.IsNullOrWhiteSpace(prod.CodigoServicio) || string.IsNullOrWhiteSpace(prod.Descripcion))
             {
                 return;
             }
@@ -63,7 +64,7 @@ namespace VistaBlazor.Pages.MisServicios
 
             if (!string.IsNullOrEmpty(result.Value))
             {
-                elimino = await servicioServicio.Eliminar(prod.codigoServicio);
+                elimino = await servicioServicio.Eliminar(prod.CodigoServicio);
 
                 if (elimino)
                 {

@@ -1,5 +1,6 @@
 ﻿using CurrieTechnologies.Razor.SweetAlert2;
 using Microsoft.AspNetCore.Components;
+using Modelos;
 using VistaBlazor.Interfaces;
 
 namespace VistaBlazor.Pages.MisServicios
@@ -10,24 +11,24 @@ namespace VistaBlazor.Pages.MisServicios
         [Inject] private NavigationManager navigationManager { get; set; }
         [Inject] private SweetAlertService Swal { get; set; }
 
-        Servicio prod = new Servicio();
+        ServicioM prod = new ServicioM();
 
 
 
         protected async Task Guardar()
         {
-            if (string.IsNullOrWhiteSpace(prod.codigoServicio) || string.IsNullOrWhiteSpace(prod.descripcion))
+            if (string.IsNullOrWhiteSpace(prod.CodigoServicio) || string.IsNullOrWhiteSpace(prod.Descripcion))
             {
                 return;
             }
 
-            Servicio prodExistente = new Servicio();
+            ServicioM prodExistente = new ServicioM();
 
-            prodExistente = await servicioServicio.GetPorCodigo(prod.codigoServicio);
+            prodExistente = await servicioServicio.GetPorCodigo(prod.CodigoServicio);
 
             if (prodExistente != null)
             {
-                if (!string.IsNullOrEmpty(prodExistente.codigoServicio))
+                if (!string.IsNullOrEmpty(prodExistente.CodigoServicio))
                 {
                     await Swal.FireAsync("Advertencia", "Ya existe un servicio con el mismo código", SweetAlertIcon.Warning);
                     return;

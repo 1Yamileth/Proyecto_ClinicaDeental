@@ -2,7 +2,7 @@
 
 namespace Modelos
 {
-    public class Servicio
+    public class ServicioM
     {
         //PROPIEDADES
 
@@ -23,11 +23,11 @@ namespace Modelos
 
         public DateTime Disponibilidad { get; set; }
 
-        public Servicio()
+        public ServicioM()
         {
         }
 
-        public Servicio(string codigoServicio, string descripcion, DateTime duracion, string codigoUsuario, decimal precio, bool estadoActivo, DateTime disponibilidad)
+        public ServicioM(string codigoServicio, string descripcion, DateTime duracion, string codigoUsuario, decimal precio, bool estadoActivo, DateTime disponibilidad)
         {
             CodigoServicio = codigoServicio;
             Descripcion = descripcion;

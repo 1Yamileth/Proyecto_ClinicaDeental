@@ -20,7 +20,7 @@ namespace Datos.Repositorios
         }
 
 
-        public async Task<bool> Actualizar(Servicio servicio)
+        public async Task<bool> Actualizar(ServicioM servicio)
         {
             bool resultado = false;
             try
@@ -54,15 +54,15 @@ namespace Datos.Repositorios
 
         }
 
-        public async Task<IEnumerable<Servicio>> GetLista()
+        public async Task<IEnumerable<ServicioM>> GetLista()
         {
-            IEnumerable<Servicio> lista = new List<Servicio>();
+            IEnumerable<ServicioM> lista = new List<ServicioM>();
             try
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
                 string sql = "SELECT * FROM servicio;";
-                lista = await _conexion.QueryAsync<Servicio>(sql);
+                lista = await _conexion.QueryAsync<ServicioM>(sql);
             }
             catch (Exception)
             {
@@ -71,15 +71,15 @@ namespace Datos.Repositorios
 
         }
 
-        public async Task<Servicio> GetPorCodigo(string codigoServicio)
+        public async Task<ServicioM> GetPorCodigo(string codigoServicio)
         {
-            Servicio prod = new Servicio();
+            ServicioM prod = new ServicioM();
             try
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
                 string sql = "SELECT * FROM servicio WHERE CodigoServicio = @CodigoServicio;";
-                prod = await _conexion.QueryFirstAsync<Servicio>(sql, new { codigoServicio });
+                prod = await _conexion.QueryFirstAsync<ServicioM>(sql, new { codigoServicio });
             }
             catch (Exception)
             {
@@ -87,7 +87,7 @@ namespace Datos.Repositorios
             return prod;
         }
 
-        public async Task<bool> Nuevo(Servicio servicio)
+        public async Task<bool> Nuevo(ServicioM servicio)
         {
             bool resultado = false;
             try

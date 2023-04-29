@@ -15,7 +15,7 @@ namespace VistaBlazor.Servicios
             _config = config;
             servicioRepositorio = new ServicioRepositorio(config.CadenaConexion);
         }
-        public async Task<bool> Actualizar(Servicio servicio)
+        public async Task<bool> Actualizar(ServicioM servicio)
         {
             return await servicioRepositorio.Actualizar(servicio);
         }
@@ -25,17 +25,17 @@ namespace VistaBlazor.Servicios
             return await servicioRepositorio.Eliminar(codigoServicio);
         }
 
-        public async Task<IEnumerable<Servicio>> GetLista()
+        public async Task<IEnumerable<ServicioM>> GetLista()
         {
             return await servicioRepositorio.GetLista();
         }
 
-        public async Task<Servicio> GetPorCodigo(string codigoServicio)
+        public async Task<ServicioM> GetPorCodigo(string codigoServicio)
         {
             return await servicioRepositorio.GetPorCodigo(codigoServicio);
         }
 
-        public async Task<bool> Nuevo(Servicio servicio)
+        public async Task<bool> Nuevo(ServicioM servicio)
         {
             return await servicioRepositorio.Nuevo(servicio);
         }

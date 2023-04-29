@@ -14,7 +14,7 @@ namespace VistaBlazor.Pages.MisServicios
             listaServicios = (IEnumerable<Servicio>)await ServicioServicio.GetLista();
         }
 
-        public static implicit operator Servicio(Modelos.Servicio v)
+        public static implicit operator Servicio(Modelos.ServicioM v)
         {
             throw new NotImplementedException();
         }

@@ -4,10 +4,10 @@ namespace VistaBlazor.Interfaces
 {
     public interface IServicioServicio
     {
-        Task<bool> Nuevo(Servicio servicio);
-        Task<bool> Actualizar(Servicio servicio);
+        Task<bool> Nuevo(ServicioM servicio);
+        Task<bool> Actualizar(ServicioM servicio);
         Task<bool> Eliminar(string codigoServicio);
-        Task<IEnumerable<Servicio>> GetLista();
-        Task<Servicio> GetPorCodigo(string codigoServicio);
+        Task<IEnumerable<ServicioM>> GetLista();
+        Task<ServicioM> GetPorCodigo(string codigoServicio);
     }
 }
