@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Modelos;
 using VistaBlazor.Interfaces;
 
 namespace VistaBlazor.Pages.MisServicios
@@ -7,16 +8,12 @@ namespace VistaBlazor.Pages.MisServicios
     {
         [Inject] IServicioServicio ServicioServicio { get; set; }
 
-        IEnumerable<Servicio> listaServicios { get; set; }
+        IEnumerable<ServicioM> listaServicios { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            listaServicios = (IEnumerable<Servicio>)await ServicioServicio.GetLista();
+            listaServicios = await ServicioServicio.GetLista();
         }
 
-        public static implicit operator Servicio(Modelos.ServicioM v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

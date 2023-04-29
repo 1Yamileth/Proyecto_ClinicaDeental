@@ -20,7 +20,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Código</th>
+                        <th>Código Servicio</th>
                         <th>Descripcion</th>
                         <th>Duración</th>
                         <th>Codigo Usuario</th>
@@ -30,15 +30,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (Servicio servi in listaServicios)
+                    @foreach (ServicioM servi in listaServicios)
                     {
                         <tr>
-                            <th>@servi.Codigo</th>
+                            <th>@servi.CodigoServicio</th>
                             <th>@servi.Descripcion</th>
                             <th>@servi.Duracion</th>
                             <th>@servi.CodigoUsuario</th>
                             <th>@servi.Precio</th>
-                            <th>@servi.EstaActivo</th>
+                            <th>@servi.EstadoActivo</th>
                             <th>@servi.Disponibilidad</th>
                     
                             @if (servi.EstadoActivo)
