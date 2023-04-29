@@ -17,7 +17,7 @@ namespace VistaBlazor.Pages.Facturacion
 
         public Factura factura = new Factura();
         private List<DetalleFactura> listaDetalleFactura = new List<DetalleFactura>();
-        private Servicio servicio = new Servicio();
+        private ServicioM servicio = new ServicioM();
 
         private string codigoServicio { get; set; }
 

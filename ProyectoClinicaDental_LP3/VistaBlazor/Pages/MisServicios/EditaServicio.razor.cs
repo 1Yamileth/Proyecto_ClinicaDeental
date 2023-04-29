@@ -3,10 +3,9 @@ using Microsoft.AspNetCore.Components;
 using Modelos;
 using VistaBlazor.Interfaces;
 
-
 namespace VistaBlazor.Pages.MisServicios
 {
-    public partial class EditarServicios
+    public partial class EditaServicio
     {
         [Inject] private IServicioServicio servicioServicio { get; set; }
         [Inject] private NavigationManager navigationManager { get; set; }
@@ -25,7 +24,6 @@ namespace VistaBlazor.Pages.MisServicios
                 prod = await servicioServicio.GetPorCodigo(Codigo);
             }
         }
-
         protected async Task Guardar()
         {
             if (string.IsNullOrWhiteSpace(prod.CodigoServicio) || string.IsNullOrWhiteSpace(prod.Descripcion))
