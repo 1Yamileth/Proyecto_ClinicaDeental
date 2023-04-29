@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="CurrieTechnologies.Razor.SweetAlert2" Version="5.5.0" />
+    <PackageReference Include="Radzen.Blazor" Version="4.10.0" />
   </ItemGroup>
 
   <ItemGroup>
