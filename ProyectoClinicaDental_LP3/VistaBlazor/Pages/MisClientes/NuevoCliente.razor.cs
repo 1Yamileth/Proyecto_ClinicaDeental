@@ -46,7 +46,7 @@ namespace VistaBlazor.Pages.MisClientes
 
         protected async Task Cancelar()
         {
-            navigationManager.NavigateTo("/Clientes");
+            navigationManager.NavigateTo("/Cliente");
         }
     }
 }
