@@ -1,24 +1,24 @@
 ﻿@page "/Cliente"
 @using Modelos;
 
-<AuthorizeView Roles="Administrador">
+<AuthorizeView Roles="Administrador, Usuario">
     <Authorized Context="AuthenticationState">
 
         <h3>Lista de Clientes</h3>
         <div class="form-group row">
             <div class="col-sm-2">
-                <a href="/Servicio" class="btn btn-primary m-2">Nuevo</a>
+                <a href="/Cliente/Nuevo" class="btn btn-primary m-2">Nuevo</a>
             </div>
         </div>
 
-        @if (listaClientes == null)
+        @if (listaC== null)
         {
             <p>No existen clientes en el sistema</p>
         }
         else
         {
             <table class="table">
-                <thead>
+                <thead> 
                     <tr>
                         <th>Identidad Cliente</th>
                         <th>Nombre</th>
@@ -29,7 +29,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (ClienteM clie in listaClientes)
+                    @foreach (ClienteM clie in listaC)
                     {
                         <tr>
                             <th>@clie.IdentidadCliente</th>

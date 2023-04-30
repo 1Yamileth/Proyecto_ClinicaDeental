@@ -1,17 +1,18 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using VistaBlazor.Interfaces;
+using Microsoft.AspNetCore.Components;
 using Modelos;
-using VistaBlazor.Interfaces;
 
 namespace VistaBlazor.Pages.MisClientes
 {
     public partial class Cliente
     {
-        [Inject] private IClienteServicio clienteServicio { get; set; }
-        private IEnumerable<ClienteM> listaClientes { get; set; }
+        [Inject] private IClienteServicio clienteServicio{ get; set; }
 
-    /*   protected override async Task OnInitializedAsync()
+        private IEnumerable<ClienteM> listaC { get; set; }
+
+     /*   protected override async Task OnInitializedAsync()
         {
-            listaClientes = await clienteServicio.GetListaClienteAsync();
+            listaC = await clienteServicio.GetListaClienteAsync();
         }*/
     }
 }

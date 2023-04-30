@@ -44,7 +44,7 @@ namespace VistaBlazor.Pages.MisServicios
 
         protected async Task Cancelar()
         {
-            navigationManager.NavigateTo("/Servicios");
+            navigationManager.NavigateTo("/Servicio");
         }
 
         protected async Task Eliminar()
@@ -67,7 +67,7 @@ namespace VistaBlazor.Pages.MisServicios
                 if (elimino)
                 {
                     await Swal.FireAsync("Felicidades", "Producto eliminado", SweetAlertIcon.Success);
-                    navigationManager.NavigateTo("/Servicios");
+                    navigationManager.NavigateTo("/Servicio");
                 }
                 else
                 {

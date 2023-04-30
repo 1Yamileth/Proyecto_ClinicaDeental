@@ -48,7 +48,7 @@ namespace VistaBlazor.Pages.MisServicios
 
         protected async Task Cancelar()
         {
-            navigationManager.NavigateTo("/Servicios");
+            navigationManager.NavigateTo("/Servicio");
         }
     }
 }
