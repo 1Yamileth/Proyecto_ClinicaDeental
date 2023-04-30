@@ -25,14 +25,14 @@ namespace Datos.Repositorios
             return new MySqlConnection(CadenaConexion);
         }
 
-        public async Task<bool> ActualizarAsync(Cliente cliente)
+        public async Task<bool> ActualizarAsync(ClienteM cliente)
         {
             bool resultado = false;
             try
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
-                string sql = @"UPDATE Cliente SET IdentidadCliente = @IdentidadCliente, Nombre = @Nombre, Telefono = @Telefono, Correo = @Correo, Direccion = @Direccion, FechaNacimiento = @FechaNacimiento, EstaActivo = @EstadoActivo
+                string sql = @"UPDATE cliente SET IdentidadCliente = @IdentidadCliente, Nombre = @Nombre, Telefono = @Telefono, Correo = @Correo, Direccion = @Direccion, FechaNacimiento = @FechaNacimiento
                                 WHERE IdentidadCliente = @IdentidadCliente;";
                 resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, cliente));
             }
@@ -43,15 +43,15 @@ namespace Datos.Repositorios
         }
 
 
-        public async Task<IEnumerable<Cliente>> GetListaAsync()
+        public async Task<IEnumerable<ClienteM>> GetListaAsync()
         {
-            IEnumerable<Cliente> lista = new List<Cliente>();
+            IEnumerable<ClienteM> lista = new List<ClienteM>();
             try
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
-                string sql = "SELECT * FROM Cliente;";
-                lista = await _conexion.QueryAsync<Cliente>(sql);
+                string sql = "SELECT * FROM cliente;";
+                lista = await _conexion.QueryAsync<ClienteM>(sql);
             }
             catch (Exception)
             {
@@ -59,15 +59,15 @@ namespace Datos.Repositorios
             return lista;
         }
 
-        public async Task<Cliente> GetPorCodigoAsync(string IdentidadCliente)
+        public async Task<ClienteM> GetPorCodigoAsync(string IdentidadCliente)
         {
-            Cliente cliente = new Cliente();
+            ClienteM cliente = new ClienteM();
             try
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
-                string sql = "SELECT * FROM Cliente WHERE IdentidadCliente = @IdentidadCliente;";
-                cliente = await _conexion.QueryFirstAsync<Cliente>(sql, new { IdentidadCliente });
+                string sql = "SELECT * FROM cliente WHERE IdentidadCliente = @IdentidadCliente;";
+                cliente = await _conexion.QueryFirstAsync<ClienteM>(sql, new { IdentidadCliente });
             }
             catch (Exception)
             {
@@ -75,15 +75,15 @@ namespace Datos.Repositorios
             return cliente;
         }
 
-        public async Task<bool> NuevoAsync(Cliente cliente)
+        public async Task<bool> NuevoAsync(ClienteM cliente)
         {
             bool resultado = false;
             try
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
-                string sql = @"INSERT INTO cliente (IdentidadCliente,Nombre,Telefono,Correo,Direccion,FechaNacimiento,EstadoActivo)
-                                 VALUES (@IdentidadCliente,@Nombre,@Telefono,@Correo,@Direccion,@FechaNacimiento,@EstadoActivo);";
+                string sql = @"INSERT INTO cliente (IdentidadCliente,Nombre,Telefono,Correo,Direccion,FechaNacimiento)
+                                 VALUES (@IdentidadCliente,@Nombre,@Telefono,@Correo,@Direccion,@FechaNacimiento);";
                 resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, cliente));
             }
             catch (Exception)
@@ -99,7 +99,7 @@ namespace Datos.Repositorios
             {
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
-                string sql = "DELETE FROM Cliente WHERE IdentidadCliente = @IdentidadCliente;";
+                string sql = "DELETE FROM cliente WHERE IdentidadCliente = @IdentidadCliente;";
                 resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, new { IdentidadCliente }));
             }
             catch (Exception)

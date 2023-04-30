@@ -17,27 +17,27 @@ namespace VistaBlazor.Servicios
         }
 
 
-        public async Task<bool> ActualizarAsync(Cliente cliente)
+        public async Task<bool> ActualizarAsync(ClienteM cliente)
         {
             return await clienteRepositorio.ActualizarAsync(cliente);
         }
 
-        public async Task<bool> EliminarAsync(string codigoCliente)
+        public async Task<bool> EliminarAsync(string IdentidadCliente)
         {
-            return await clienteRepositorio.EliminarAsync(codigoCliente);
+            return await clienteRepositorio.EliminarAsync(IdentidadCliente);
         }
 
-        public async Task<IEnumerable<Cliente>> GetListaAsync()
+        public async Task<IEnumerable<ClienteM>> GetListaClienteAsync()
         {
             return await clienteRepositorio.GetListaAsync();
         }
 
-        public async Task<Cliente> GetPorCodigoAsync(string codigoCliente)
+        public async Task<ClienteM> GetPorCodigoAsync(string IdentidadCliente)
         {
-            return await clienteRepositorio.GetPorCodigoAsync(codigoCliente);
+            return await clienteRepositorio.GetPorCodigoAsync(IdentidadCliente);
         }
 
-        public async Task<bool> NuevoAsync(Cliente cliente)
+        public async Task<bool> NuevoAsync(ClienteM cliente)
         {
             return await clienteRepositorio.NuevoAsync(cliente);
         }

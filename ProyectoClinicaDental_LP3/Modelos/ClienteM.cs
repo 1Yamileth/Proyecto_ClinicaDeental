@@ -1,26 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Modelos
 {
-    public class Cliente
+    public class ClienteM
     {
+        [Required(ErrorMessage = "La identidad del cliente es requerida")]
         public string IdentidadCliente { get; set; }
+        [Required(ErrorMessage = "El nombre es requerido")]
         public string Nombre { get; set; }
+        [Required(ErrorMessage = "El telefono es requerido")]
         public string Telefono { get; set; }
         public string Correo { get; set; }
         public string Direccion { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public bool EstaActivo { get; set; }
 
-        public Cliente()
+        public ClienteM()
         {
         }
 
-        public Cliente(string identidadCliente, string nombre, string telefono, string correo, string direccion, DateTime fechaNacimiento, bool estaActivo)
+        public ClienteM(string identidadCliente, string nombre, string telefono, string correo, string direccion, DateTime fechaNacimiento, bool estadoActivo)
         {
             IdentidadCliente = identidadCliente;
             Nombre = nombre;
@@ -28,7 +31,6 @@ namespace Modelos
             Correo = correo;
             Direccion = direccion;
             FechaNacimiento = fechaNacimiento;
-            EstaActivo = estaActivo;
         }
     }
 

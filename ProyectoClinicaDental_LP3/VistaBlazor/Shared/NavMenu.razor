@@ -32,14 +32,14 @@
         <AuthorizeView Roles="Administrador">
             <Authorized>
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="Productos">
-                        <span class="oi oi-compass" aria-hidden="true"></span> Servicios
+                    <NavLink class="nav-link" href="Servicio">
+                        <span class="oi oi-compass" aria-hidden="true"></span> Servicio
                     </NavLink>
                 </div>
             </Authorized>
         </AuthorizeView>
 
-        <AuthorizeView Roles="Administrador, Usuario">
+        <AuthorizeView Roles="Administrador, Usuario ">
             <Authorized>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="NuevaFactura">
@@ -49,6 +49,15 @@
             </Authorized>
         </AuthorizeView>
 
+        <AuthorizeView Roles="Administrador, Usuario ">
+            <Authorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="Cliente">
+                        <span class="oi oi-code" aria-hidden="true"></span> Cliente
+                    </NavLink>
+                </div>
+            </Authorized>
+        </AuthorizeView>
     </nav>
 </div>
 

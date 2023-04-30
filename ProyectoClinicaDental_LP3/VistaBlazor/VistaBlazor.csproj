@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Login.razor" />
+    <Content Remove="Pages\MisClientes\Cliente.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,15 +21,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Login.razor" />
+    <_ContentIncludedByDefault Remove="Pages\MisClientes\Cliente.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Login.razor" />
+    <None Include="Pages\MisClientes\Cliente.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\Login.razor" />
+    <UpToDateCheckInput Remove="Pages\MisClientes\Cliente.razor" />
   </ItemGroup>
 
 </Project>
