@@ -11,14 +11,14 @@
             </div>
         </div>
 
-        @if (listaC== null)
+        @if (listaC == null)
         {
             <p>No existen clientes en el sistema</p>
         }
         else
         {
             <table class="table">
-                <thead> 
+                <thead>
                     <tr>
                         <th>Identidad Cliente</th>
                         <th>Nombre</th>
@@ -39,7 +39,7 @@
                             <th>@clie.Direccion</th>
                             <th>@clie.FechaNacimiento</th>
 
-                            
+
                             <th>
                                 <a class="btn btn-success" href="@($"/Cliente/Editar/{clie.IdentidadCliente}")">Editar</a>
                             </th>

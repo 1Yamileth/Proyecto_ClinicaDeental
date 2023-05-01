@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Modelos;
 using VistaBlazor.Interfaces;
 
-namespace VistaBlazor.Pages.MisClientes
+namespace VistaBlazor.Pages.MiClientes
 {
     public partial class NuevoCliente
     {
