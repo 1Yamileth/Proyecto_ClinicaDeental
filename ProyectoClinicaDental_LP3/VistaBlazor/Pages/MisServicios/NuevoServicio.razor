@@ -2,14 +2,14 @@
 
 <AuthorizeView Roles="Administrador">
     <Authorized Context="AuthenticationState">
-        <h3>Nuevo Producto</h3>
+        <h3>Nuevo Servicio</h3>
 
         <EditForm Model="@prod">
             <DataAnnotationsValidator />
 
             <div class="form-group row">
                 <label for="Codigo" class="col-sm-2 col-form-label">
-                    Código
+                    Código Servicio
                 </label>
                 <div class="col-sm-10">
                     <InputText id="Codigo" class="form-control" @bind-Value="prod.CodigoServicio" />
@@ -28,14 +28,14 @@
             </div>
 
             <div class="col-sm-2">
-                <b>Fecha:</b>
-                <RadzenDatePicker id="Fecha" class="w-100" DateFormat="d" @bind-Value="prod.Duracion" />
+                <b>Duración:</b>
+                <RadzenDatePicker id="Fecha" class="w-100" DateFormat="t" @bind-Value="prod.Duracion" />
             </div>
 
 
             <div class="form-group row">
                 <label for="Codigo" class="col-sm-2 col-form-label">
-                    Código
+                    Código Usuario
                 </label>
                 <div class="col-sm-10">
                     <InputText id="Codigo" class="form-control" @bind-Value="prod.CodigoUsuario" />
