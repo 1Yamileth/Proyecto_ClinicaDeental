@@ -13,8 +13,9 @@
                     Código Usuario
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="CodigoUsuario" class="form-control" @bind-Value="user.CodigoUsuario" />
+                    <InputText id="CodigoUsuario" class="form-control" @bind-Value="user.CodigoUsuario" style="width: 200px" />
                     <ValidationMessage For="@(() => user.CodigoUsuario)" />
+                    <p> </p>
                 </div>
             </div>
 
@@ -23,8 +24,9 @@
                     Nombre
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Nombre" class="form-control" @bind-Value="user.Nombre" />
+                    <InputText id="Nombre" class="form-control" @bind-Value="user.Nombre" style="width: 500px" />
                     <ValidationMessage For="@(() => user.Nombre)" />
+                        <p> </p>
                 </div>
             </div>
 
@@ -33,8 +35,9 @@
                     Contraseña
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Contrasena" type="password" class="form-control" @bind-Value="user.Contrasena" />
+                    <InputText id="Contrasena" type="password" class="form-control" @bind-Value="user.Contrasena" style="width: 200px" />
                     <ValidationMessage For="@(() => user.Contrasena)" />
+                    <p> </p>
                 </div>
             </div>
 
@@ -43,7 +46,8 @@
                     Correo
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Correo" type="email" class="form-control" @bind-Value="user.Correo" />
+                    <InputText id="Correo" type="email" class="form-control" @bind-Value="user.Correo" style="width: 500px" />
+                    <p> </p>
                 </div>
             </div>
 
@@ -52,7 +56,7 @@
                     Rol
                 </label>
                 <div class="col-sm-10">
-                    <InputSelect class="form-control" @bind-Value="user.Rol">
+                    <InputSelect class="form-control" @bind-Value="user.Rol" style="width: 200px">
                         @foreach (var rol in Enum.GetValues(typeof(Roles)))
                         {
                             <option value="@rol">@rol</option>
@@ -79,13 +83,14 @@
                 </div>
             </div>
 
+
             <div class="form-group row">
                 <label for="FechaCreacion" class="col-sm-2 col-form-label">
                     Fecha Creación
                 </label>
                 <div class="col-sm-10">
                     <label for="FechaCreacion" class="col-form-label">
-                        @user.FechaCreacion.ToShortDateString()
+                        @user.FechaCreacion.ToLongDateString()
                     </label>
                 </div>
             </div>
