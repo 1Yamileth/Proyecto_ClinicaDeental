@@ -33,6 +33,7 @@
 						<a href= "Tel:#">
 							<h2>+504-2223-5898</h2>
 							</a>
+							<p> </p>
 						</div>
 						
 						<form role="form" class="form-contacto">
@@ -40,8 +41,10 @@
 						<div class="col-md-6">
 						<input type="text" class="form-control" placeholder="Tu Nombre*"
 							   required="required" name="name">
+									<p> </p>
 							<input type="text" class="form-control" placeholder="Tu Email*"
 								   required="required" name="name">
+									<p> </p>
 							<input type="text" class="form-control" placeholder="Telefono*"
 								   name="phone">
 						</div>
@@ -49,6 +52,7 @@
 							<div class="col-md-6">
 							<input type="text" class="form-control" placeholder="Fecha*"
 								   required="required" name="date" id="datapicker">
+									<p> </p>
 								<input type="text" class="form-control" placeholder="Hora*"
 								   required="required" name="time">
 							</div>
@@ -71,7 +75,6 @@
 					</div>
 
 					<div class="col-sm-1">
-						<b>Buscar:</b>
 						<input type="submit" class="btn btn-primary" value="Buscar" @onclick="@BuscarServicio" />
 					</div>
 
@@ -81,7 +84,6 @@
 					</div>
 
 					<div class="col-sm-1">
-						<b>Agregar:</b>
 						<input type="submit" class="btn btn-primary" value="Agregar" @onclick="@AgregarServicio" />
 					</div>
 				</div>
@@ -144,6 +146,7 @@
 					<label for="Total" class="col-sm-10 col-form-label">Total</label>
 					<div class="col-md-2">
 						<InputNumber readonly id="Total" TValue="Decimal" class="form-control" @bind-value="factura.Total" ValueExpression="@( () => factura.Total )" />
+						<p> </p>
 					</div>
 				</div>
 			</div>

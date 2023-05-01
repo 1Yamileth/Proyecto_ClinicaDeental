@@ -12,34 +12,43 @@
                     Código Servicio
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Codigo" class="form-control" @bind-Value="prod.CodigoServicio" />
+                    <InputText id="Codigo" class="form-control" @bind-Value="prod.CodigoServicio" style="width: 150px" />
                     <ValidationMessage For="@(() => prod.CodigoServicio)" />
+                    <p> </p>
                 </div>
             </div>
+
+            
 
             <div class="form-group row">
                 <label for="Descripcion" class="col-sm-2 col-form-label">
                     Descripción
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Descripcion" class="form-control" @bind-Value="prod.Descripcion" />
+                    <InputText id="Descripcion" class="form-control" @bind-Value="prod.Descripcion" style="width: 700px" />
                     <ValidationMessage For="@(() => prod.Descripcion)" />
                 </div>
+                <p> </p>
             </div>
 
-            <div class="col-sm-2">
-                <b>Duración:</b>
-                <RadzenDatePicker id="Fecha" class="w-100" DateFormat="t" @bind-Value="prod.Duracion" />
+            <div class="form-group row">
+                <label for="Duracion" class="col-sm-2 col-form-label">
+                    Duracion
+                    </label>
+                    <div class="col-sm-10">
+                    <RadzenDatePicker id="Fecha"  DateFormat="t" @bind-Value="prod.Duracion" />
+                    <p> </p>
+                 </div>
             </div>
-
 
             <div class="form-group row">
                 <label for="Codigo" class="col-sm-2 col-form-label">
                     Código Usuario
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Codigo" class="form-control" @bind-Value="prod.CodigoUsuario" />
+                    <InputText id="Codigo" class="form-control" @bind-Value="prod.CodigoUsuario" style="width: 150px" />
                     <ValidationMessage For="@(() => prod.CodigoUsuario)" />
+                    <p> </p>
                 </div>
             </div>
 
@@ -48,8 +57,9 @@
                     Precio
                 </label>
                 <div class="col-sm-10">
-                    <InputNumber id="Precio" class="form-control" @bind-Value="prod.Precio" />
+                    <InputNumber id="Precio" class="form-control" @bind-Value="prod.Precio" style="width: 150px" />
                 </div>
+                <p> </p>
             </div>
 
 
@@ -60,14 +70,18 @@
                 <div class="col-sm-10">
                     <InputCheckbox @bind-Value="prod.EstadoActivo" />
                 </div>
+                <p> </p>
             </div>
 
-            <div class="col-sm-2">
-                <b>Fecha:</b>
-                <RadzenDatePicker id="Fecha" class="w-100" DateFormat="d" @bind-Value="prod.Disponibilidad" />
+            <div class="form-group row">
+                <label for="Disponibilidad" class="col-sm-2 col-form-label">
+                    Disponibilidad
+                </label>
+                <div class="col-sm-10">
+                    <RadzenDatePicker id="Fecha"  DateFormat="d" @bind-Value="prod.Disponibilidad"  />
+                    <p> </p>
+                </div>
             </div>
-
-
 
 
 
