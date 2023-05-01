@@ -46,6 +46,8 @@ namespace VistaBlazor.Pages.MisUsuarios
             if (edito)
             {
                 await Swal.FireAsync("Felicidades", "Usuario Actualizado", SweetAlertIcon.Success);
+                navigationManager.NavigateTo("/Usuarios");
+
             }
             else
             {

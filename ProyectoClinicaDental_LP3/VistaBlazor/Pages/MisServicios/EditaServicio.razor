@@ -8,12 +8,13 @@
             <DataAnnotationsValidator />
 
             <div class="form-group row">
-                <label for="Codigo" class="col-sm-2 col-form-label">
+                <label for="CodigoServicio" class="col-sm-2 col-form-label">
                     Código Servicio
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Codigo" class="form-control" @bind-Value="prod.CodigoServicio" style="width: 150px" />
-                    <ValidationMessage For="@(() => prod.CodigoServicio)" />
+                    <label for="CodigoServicio" class="col-form-label" style="width: 150px">
+                        @prod.CodigoServicio
+                    </label>
                     <p> </p>
                 </div>
             </div>

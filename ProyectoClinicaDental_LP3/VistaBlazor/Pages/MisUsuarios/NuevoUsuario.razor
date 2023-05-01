@@ -89,9 +89,8 @@
                     Fecha Creación
                 </label>
                 <div class="col-sm-10">
-                    <label for="FechaCreacion" class="col-form-label">
-                        @user.FechaCreacion.ToLongDateString()
-                    </label>
+                    <RadzenDatePicker id="FechaCreacion"  DateFormat="d" @bind-Value="user.FechaCreacion"  />
+                    <p> </p>
                 </div>
             </div>
 

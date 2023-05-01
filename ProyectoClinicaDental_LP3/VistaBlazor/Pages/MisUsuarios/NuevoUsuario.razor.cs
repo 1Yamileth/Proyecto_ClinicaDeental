@@ -26,6 +26,11 @@ namespace VistaBlazor.Pages.MisUsuarios
             imgUrl = $"data:{imageType};base64,{Convert.ToBase64String(buffers)}";
         }
 
+        protected override async Task OnInitializedAsync()
+        {
+            user.FechaCreacion = DateTime.Now;
+        }
+
         protected async void Guardar()
         {
             if (string.IsNullOrWhiteSpace(user.CodigoUsuario) || string.IsNullOrWhiteSpace(user.Nombre) ||
@@ -39,6 +44,8 @@ namespace VistaBlazor.Pages.MisUsuarios
             if (inserto)
             {
                 await Swal.FireAsync("Felicidades", "Usuario Guardado", SweetAlertIcon.Success);
+                navigationManager.NavigateTo("/Usuarios");
+
             }
             else
             {

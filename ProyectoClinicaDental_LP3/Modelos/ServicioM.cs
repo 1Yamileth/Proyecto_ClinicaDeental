@@ -12,7 +12,7 @@ namespace Modelos
         [Required(ErrorMessage = "La descripción es obligatoria")]
         public string Descripcion { get; set; }
 
-        public DateTime Duracion { get; set; }
+        public string Duracion { get; set; }
 
         [Required(ErrorMessage = "El codigo es obligatorio")]
         public string CodigoUsuario { get; set; }
@@ -27,7 +27,7 @@ namespace Modelos
         {
         }
 
-        public ServicioM(string codigoServicio, string descripcion, DateTime duracion, string codigoUsuario, decimal precio, bool estadoActivo, DateTime disponibilidad)
+        public ServicioM(string codigoServicio, string descripcion, string duracion, string codigoUsuario, decimal precio, bool estadoActivo, DateTime disponibilidad)
         {
             CodigoServicio = codigoServicio;
             Descripcion = descripcion;

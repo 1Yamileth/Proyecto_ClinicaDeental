@@ -14,7 +14,10 @@ namespace VistaBlazor.Pages.MisServicios
         ServicioM prod = new ServicioM();
 
 
-
+        protected override async Task OnInitializedAsync()
+        {
+            prod.Disponibilidad  = DateTime.Now;
+        }
         protected async Task Guardar()
         {
             if (string.IsNullOrWhiteSpace(prod.CodigoServicio) || string.IsNullOrWhiteSpace(prod.Descripcion))
@@ -39,10 +42,13 @@ namespace VistaBlazor.Pages.MisServicios
             if (inserto)
             {
                 await Swal.FireAsync("Atención", "Servicio guardado", SweetAlertIcon.Success);
+                navigationManager.NavigateTo("/Servicio");
+
             }
             else
             {
                 await Swal.FireAsync("Error", "No se pudo guardar el servicio", SweetAlertIcon.Error);
+
             }
         }
 
