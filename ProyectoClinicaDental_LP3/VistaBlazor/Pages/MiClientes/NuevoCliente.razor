@@ -8,12 +8,11 @@
             <DataAnnotationsValidator />
 
             <div class="form-group row">
-                <label for="Identidad" class="col-sm-2 col-form-label">
-                    Identidad
+                <label for="IdentidadCliente" class="col-sm-2 col-form-label">
+                    Identidad Cliente
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Identidad" class="form-control" @bind-Value="clie.IdentidadCliente" />
-                    <ValidationMessage For="@(() => clie.IdentidadCliente)" />
+                    <InputNumber id="IdentidadCliente" class="form-control" @bind-Value="clie.IdentidadCliente" />
                 </div>
             </div>
 
@@ -34,17 +33,7 @@
 
 
             <div class="form-group row">
-                <label for="Codigo" class="col-sm-2 col-form-label">
-                    Código
-                </label>
-                <div class="col-sm-10">
-                    <InputText id="Codigo" class="form-control" @bind-Value="clie.IdentidadCliente" />
-                    <ValidationMessage For="@(() => clie.IdentidadCliente)" />
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="Precio" class="col-sm-2 col-form-label">
+                <label for="Telefono" class="col-sm-2 col-form-label">
                     Telefono
                 </label>
                 <div class="col-sm-10">
@@ -53,10 +42,13 @@
             </div>
 
             <div class="form-group row">
-                <p>
-                    <input type="submit" class="btn btn-primary" value="Guardar" @onclick="Guardar" />
-                    <input type="submit" class="btn btn-danger" value="Cancelar" @onclick="Cancelar" />
-                </p>
+                <label for="Correo" class="col-sm-2 col-form-label">
+                    Correo
+                </label>
+                <div class="col-sm-10">
+                    <InputText id="Correo" class="form-control" @bind-Value="clie.Correo" />
+                    <ValidationMessage For="@(() => clie.Correo)" />
+                </div>
             </div>
 
             <div class="form-group row">
@@ -68,6 +60,15 @@
                     <ValidationMessage For="@(() => clie.Direccion)" />
                 </div>
             </div>
+
+            <div class="form-group row">
+                <p>
+                    <input type="submit" class="btn btn-primary" value="Guardar" @onclick="Guardar" />
+                    <input type="submit" class="btn btn-danger" value="Cancelar" @onclick="Cancelar" />
+                </p>
+            </div>
+
+            
 
 
         </EditForm>
