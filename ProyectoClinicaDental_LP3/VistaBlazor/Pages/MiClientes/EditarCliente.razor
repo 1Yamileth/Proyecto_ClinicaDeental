@@ -25,10 +25,10 @@
                     Nombre
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Nombre" class="form-control" @bind-Value="clie.Nombre" style="width: 700px" />
+                    <InputText id="Nombre" class="form-control" @bind-Value="clie.Nombre" style="width: 500px" />
                     <ValidationMessage For="@(() => clie.Nombre)" />
+                    <p> </p>
                 </div>
-                <p> </p>
             </div>
 
             <div class="form-group row">
@@ -36,8 +36,9 @@
                     Telefono
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Telefono" class="form-control" @bind-Value="clie.Telefono" />
+                    <InputText id="Telefono" class="form-control" @bind-Value="clie.Telefono" style="width: 200px" />
                     <ValidationMessage For="@(() => clie.Telefono)" />
+                    <p> </p>
                 </div>
             </div>
 
@@ -46,7 +47,7 @@
                     Correo
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Correo" class="form-control" @bind-Value="clie.Correo" style="width: 700px" />
+                    <InputText id="Correo" class="form-control" @bind-Value="clie.Correo" style="width: 500px" />
                     <ValidationMessage For="@(() => clie.Correo)" />
                 </div>
                 <p> </p>
@@ -57,7 +58,7 @@
                     Direccion
                 </label>
                 <div class="col-sm-10">
-                    <InputText id="Direccion" class="form-control" @bind-Value="clie.Direccion" style="width: 700px" />
+                    <InputText id="Direccion" class="form-control" @bind-Value="clie.Direccion" style="width: 600px" />
                     <ValidationMessage For="@(() => clie.Direccion)" />
                 </div>
                 <p> </p>
@@ -68,7 +69,7 @@
                     Fecha Nacimiento
                 </label>
                 <div class="col-sm-10">
-                    <RadzenDatePicker id="FechaNacimiento" DateFormat="t" @bind-Value="clie.FechaNacimiento" />
+                    <RadzenDatePicker id="FechaNacimiento" DateFormat="d" @bind-Value="clie.FechaNacimiento" />
                     <p> </p>
                 </div>
             </div>
