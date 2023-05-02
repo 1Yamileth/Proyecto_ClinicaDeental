@@ -26,7 +26,7 @@ namespace VistaBlazor.Pages.MiClientes
 
             if (ClieExiste != null)
             {
-                if (!string.IsNullOrEmpty(clie.IdentidadCliente))
+                if (!string.IsNullOrEmpty(ClieExiste.IdentidadCliente))
                 {
                     await Swal.FireAsync("Advertencia", "Ya existe un Cliente con el mismo código", SweetAlertIcon.Warning);
                     return;
