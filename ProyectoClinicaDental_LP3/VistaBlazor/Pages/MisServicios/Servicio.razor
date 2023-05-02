@@ -38,10 +38,8 @@
                             <th>@servi.Duracion</th>
                             <th>@servi.CodigoUsuario</th>
                             <th>@servi.Precio</th>
-                            <th>@servi.EstadoActivo</th>
-                            <th>@servi.Disponibilidad</th>
-                    
-                            @if (servi.EstadoActivo)
+
+                             @if (servi.EstadoActivo)
                             {
                                 <th>
                                     <span class="oi oi-circle-check" style="color:green;"></span>
@@ -53,6 +51,9 @@
                                     <span class="oi oi-circle-x" style="color:red;"></span>
                                 </th>
                             }
+
+                            <th>@servi.Disponibilidad</th>
+                    
                             <th>
                                 <a class="btn btn-success" href="@($"/Servicio/EditarServicio/{servi.CodigoServicio}")">Editar</a>
                             </th>
