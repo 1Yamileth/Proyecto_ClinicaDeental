@@ -4,8 +4,8 @@ namespace Modelos
 {
     public class Factura
     {
-        [Required(ErrorMessage = "El código es requerido")]
-        public int IdFactura { get; set; }
+        
+        public int Id { get; set; }
         public DateTime FechaFactura { get; set; }
         [Required(ErrorMessage = "La identidad del cliente es requerida")]
         public string IdentidadCliente { get; set; }
@@ -21,9 +21,9 @@ namespace Modelos
         {
         }
 
-        public Factura(int idFactura, DateTime fechaFactura, string identidadCliente, string codigoUsuario, decimal iSV, decimal descuento, decimal subtotal, decimal total)
+        public Factura(int id, DateTime fechaFactura, string identidadCliente, string codigoUsuario, decimal iSV, decimal descuento, decimal subtotal, decimal total)
         {
-            IdFactura = idFactura;
+            Id = id;
             FechaFactura = fechaFactura;
             IdentidadCliente = identidadCliente;
             CodigoUsuario = codigoUsuario;
