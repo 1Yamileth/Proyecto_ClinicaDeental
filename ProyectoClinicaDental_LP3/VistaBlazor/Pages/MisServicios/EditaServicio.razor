@@ -2,7 +2,7 @@
 
 <AuthorizeView Roles="Administrador">
     <Authorized Context="AuthenticationState">
-        <h3>Editar Producto</h3>
+        <h3>Editar Servicio</h3>
 
         <EditForm Model="@prod">
             <DataAnnotationsValidator />
@@ -90,6 +90,7 @@
                 <p>
                     <input type="submit" class="btn btn-primary" value="Guardar" @onclick="Guardar" />
                     <input type="submit" class="btn btn-danger" value="Cancelar" @onclick="Cancelar" />
+                    <input type="submit" class="btn btn-warning" value="Eliminar" @onclick="Eliminar" />
                 </p>
             </div>
 
